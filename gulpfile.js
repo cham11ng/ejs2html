@@ -10,4 +10,8 @@ gulp.task('compile', function() {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('default', ['compile']);
+gulp.task('copy', function() {
+  gulp.src(['./src/css/**/*']).pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('default', ['compile', 'copy']);
